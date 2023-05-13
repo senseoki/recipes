@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'recipe_model.dart';
 
 void main() {
   runApp(const RecipeApp());
@@ -37,9 +38,16 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Container(
-        color: Colors.amber,
-      ),
+      body: ListView.builder(
+          itemCount: Recipe.samples.length,
+          itemBuilder: (BuildContext context, int index) {
+        return buildRecipeCard(Recipe.samples[index]);
+      }),
     );
+  }
+
+  Widget buildRecipeCard(Recipe recipe) {
+
+    return Text(recipe.label);
   }
 }
