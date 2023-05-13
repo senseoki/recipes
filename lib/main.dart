@@ -31,7 +31,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,13 +40,19 @@ class _MyHomePageState extends State<MyHomePage> {
       body: ListView.builder(
           itemCount: Recipe.samples.length,
           itemBuilder: (BuildContext context, int index) {
-        return buildRecipeCard(Recipe.samples[index]);
-      }),
+            return buildRecipeCard(Recipe.samples[index]);
+          }),
     );
   }
 
   Widget buildRecipeCard(Recipe recipe) {
-
-    return Text(recipe.label);
+    return Card(
+      child: Column(
+        children: [
+          Image.asset(recipe.imageUrl),
+          Text(recipe.label),
+        ],
+      ),
+    );
   }
 }
