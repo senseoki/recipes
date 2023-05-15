@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipes/RecipeDetail.dart';
 import 'recipe_model.dart';
 
 void main() {
@@ -44,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onTap: () {
                 print(Recipe.samples[index].label);
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return Text('new page - ${Recipe.samples[index].label}');
+                  return RecipeDetail(recipe: Recipe.samples[index]);
                 }));
               },
               child: buildRecipeCard(Recipe.samples[index]),
