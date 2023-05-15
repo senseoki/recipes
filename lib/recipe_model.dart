@@ -2,7 +2,6 @@ class Recipe {
   String label;
   String imageUrl;
 
-  // TODO: 몇인분, 재료
   int serving;
   List<Ingredient> ingredients;
 
@@ -55,28 +54,6 @@ class Recipe {
       [
         Ingredient(
           4,
-          'cups',
-          'flour',
-        ),
-        Ingredient(
-          2,
-          'cups',
-          'sugar',
-        ),
-        Ingredient(
-          0.5,
-          'cups',
-          'chocolate chips',
-        ),
-      ],
-    ),
-    Recipe(
-      'Chocolate Chip Cookies',
-      'assets/choco_chip.jpeg',
-      1,
-      [
-        Ingredient(
-          4,
           'oz',
           'nachos',
         ),
@@ -94,6 +71,28 @@ class Recipe {
           0.25,
           'cup',
           'chopped tomatoes',
+        ),
+      ],
+    ),
+    Recipe(
+      'Chocolate Chip Cookies',
+      'assets/choco_chip.jpeg',
+      1,
+      [
+        Ingredient(
+          4,
+          'cups',
+          'flour',
+        ),
+        Ingredient(
+          2,
+          'cups',
+          'sugar',
+        ),
+        Ingredient(
+          0.5,
+          'cups',
+          'chocolate chips',
         ),
       ],
     ),

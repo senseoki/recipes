@@ -31,6 +31,16 @@ class _RecipeDetailState extends State<RecipeDetail> {
               height: 16,
             ),
             Text(widget.recipe.label),
+            const SizedBox(
+              height: 16,
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: widget.recipe.ingredients.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return Text(widget.recipe.ingredients[index].name);
+              },),
+            ),
           ],
         ),
       ),
