@@ -17,7 +17,7 @@ class _RecipeDetailState extends State<RecipeDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Recipe Detail'),
+        title: const Text('Recipe Detail!'),
       ),
       body: SafeArea(
         child: Column(
