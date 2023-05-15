@@ -40,18 +40,34 @@ class _MyHomePageState extends State<MyHomePage> {
       body: ListView.builder(
           itemCount: Recipe.samples.length,
           itemBuilder: (BuildContext context, int index) {
-            return buildRecipeCard(Recipe.samples[index]);
+            return GestureDetector(
+              onTap: () {
+                print(Recipe.samples[index].label);
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return Text('new page - ${Recipe.samples[index].label}');
+                }));
+              },
+              child: buildRecipeCard(Recipe.samples[index]),
+            );
           }),
     );
   }
 
   Widget buildRecipeCard(Recipe recipe) {
     return Card(
-      child: Column(
-        children: [
-          Image.asset(recipe.imageUrl),
-          Text(recipe.label),
-        ],
+      elevation: 2,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      child: Padding(
+        padding: const EdgeInsets.all(24.0),
+        child: Column(
+          children: [
+            Image.asset(recipe.imageUrl),
+            const SizedBox(
+              height: 10,
+            ),
+            Text(recipe.label),
+          ],
+        ),
       ),
     );
   }
